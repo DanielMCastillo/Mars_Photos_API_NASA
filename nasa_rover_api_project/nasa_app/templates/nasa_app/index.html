@@ -1,6 +1,7 @@
 {% load static %}
 <html lang="zxx">
 <head>
+	<link rel="icon" href="{% static 'nasa_app/img/nasaicon.ico' %}" type="image/png">
 	<title>NASA APIS MARS ROVER</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="Boto Photo Studio HTML Template">
@@ -29,10 +30,10 @@
 			<div class="row">
 				<div class="col-sm-4 col-md-3 order-2 order-sm-1">
 					<div class="header__social">
-						<a href="#"><i class="fa fa-youtube"></i></a>
-						<a href="#"><i class="fa fa-github"></i></a>
-						<a href="#"><i class="fa fa-instagram"></i></a>
-						<a href="#"><i class="fa fa-linkedin"></i></a>
+						<a href="https://www.youtube.com/@danythecoder" target="_blank" rel="noopener noreferrer"><i class="fa fa-youtube"></i></a>
+						<a href="https://github.com/DanielMCastillo" target="_blank" rel="noopener noreferrer"><i class="fa fa-github"></i></a>
+						<a href="https://www.instagram.com/dany4loop/" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram"></i></a>
+						<a href="https://www.linkedin.com/in/danielmcastillo/" target="_blank" rel="noopener noreferrer"><i class="fa fa-linkedin"></i></a>
 					</div>
 				</div>
 				<div class="col-sm-4 col-md-6 order-1  order-md-2 text-center">
@@ -48,15 +49,9 @@
 			</div>
 			<nav class="main__menu">
 				<ul class="nav__menu">
-					<li><a href="./index.html" class="menu--active">Home</a></li>
-					<li><a href="./about.html">About</a></li>
-					<li><a href="./gallery.html">Gallery</a></li>
-					<li><a href="./blog.html">Blog</a>
-						<ul class="sub__menu">
-							<li><a href="./blog-single.html">Blog Single</a></li>
-						</ul>
-					</li>
-					<li><a href="./contact.html">Contact</a></li>
+					<li><a href="{% url 'mars_photos' %}" class="menu--active">Home</a></li>
+					<li><a href="{% url 'mars_about' %}">About</a></li>
+					<li><a href="mailto:danielmoralescast@hotmail.com">Contact</a><li>
 				</ul>
 			</nav>
 		</div>

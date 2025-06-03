@@ -82,7 +82,7 @@ textarea:focus {
 }
 
 .card-title{
-	color: #27386e;
+	color: 27386e;
 }
 
 a:hover,
@@ -225,7 +225,7 @@ ol {
 	padding: 16px 15px;
 	min-width: 180px;
 	color: #fff;
-	background: #8DB952;
+	background: #27386e;
 	line-height: 1;
 	text-align: center;
 	font-weight: 700;
@@ -263,7 +263,7 @@ ol {
 	height: 4px;
 	left: calc(50% - 30px);
 	bottom: 0;
-	background: #8DB952;
+	background: #27386e;
 }
 
 .section__title h2 {
@@ -453,7 +453,7 @@ ol {
 	height: 6px;
 	left: 0;
 	bottom: 8px;
-	background: #27386e;
+	background: 27386e;
 	z-index: -1;
 	-webkit-transition: 0.3s;
 	-o-transition: 0.3s;
@@ -477,7 +477,7 @@ ol {
 }
 
 .button{
-	color: #27386e;
+	color: 27386e;
 }
 
 .main__menu .nav__menu>li:hover .sub__menu {
@@ -664,7 +664,7 @@ ol {
 }
 
 .footer__copyright__text a:hover {
-	color: #8DB952;
+	color: #27386e;
 }
 
 /*------------------
@@ -694,7 +694,7 @@ ol {
 	height: 6px;
 	left: 0;
 	bottom: 8px;
-	background: #8DB952;
+	background: #27386e;
 	opacity: 0.5;
 	z-index: -1;
 }
@@ -733,7 +733,7 @@ ol {
 .about__meta__info p {
 	text-transform: uppercase;
 	font-size: 12px;
-	color: #8DB952;
+	color: #27386e;
 }
 
 .experience__item {
@@ -769,7 +769,7 @@ ol {
 
 .progress-bar-style .bar-inner {
 	height: 100%;
-	background: #8DB952;
+	background: #27386e;
 }
 
 /*-------------------
@@ -817,7 +817,7 @@ ol {
 }
 
 .fr-thumbnail-active {
-	border: 2px solid #8DB952;
+	border: 2px solid #27386e;
 }
 
 /*----------------
@@ -954,7 +954,7 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 	padding: 4px 13px;
 	border-radius: 2px;
 	color: #fff;
-	background: #8DB952;
+	background: #27386e;
 	margin-bottom: 20px;
 }
 
@@ -1021,7 +1021,7 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 .blog__article blockquote h5 {
 	font-size: 14px;
 	text-transform: uppercase;
-	color: #8DB952;
+	color: #27386e;
 	letter-spacing: 2px;
 }
 
@@ -1056,7 +1056,7 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 }
 
 .post__tags a:hover {
-	background: #8DB952;
+	background: #27386e;
 	color: #fff;
 }
 
@@ -1110,7 +1110,7 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 
 .comment__form input:focus,
 .comment__form textarea:focus {
-	border: 1px solid #8DB952;
+	border: 1px solid #27386e;
 }
 
 .comment__form textarea {
@@ -1180,7 +1180,7 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 }
 
 .contact__social a:hover {
-	background: #8DB952;
+	background: #27386e;
 	color: #ffffff;
 }
 
@@ -1206,7 +1206,7 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 
 .contact__form input:focus,
 .contact__form textarea:focus {
-	border: 1px solid #8DB952;
+	border: 1px solid #27386e;
 }
 
 .contact__form textarea {

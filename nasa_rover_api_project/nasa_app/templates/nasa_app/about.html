@@ -1,29 +1,108 @@
-{% extends 'nasa_app/base.html' %}
-<head>
-    <meta charset="UTF-8">
-    <title>Fotos de Marte - Rover Curiosity</title>
-</head>
+{% extends "nasa_app/index.html" %}
+{% load static %}
 {% block content %}
 <body>
-    <h1>Fotos de Marte - {{ date }}</h1>
-    
-    <form method="get">
-        <label for="date">Selecciona una fecha (YYYY-MM-DD):</label>
-        <input type="date" id="date" name="date" value="{{ date }}">
-        <button type="submit">Buscar</button>
-    </form>
+	<!-- Header Section -->
+	<header class="header">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-4 col-md-3 order-2 order-sm-1">
+					<div class="header__social">
+						<a href="https://www.youtube.com/@danythecoder" target="_blank" rel="noopener noreferrer"><i class="fa fa-youtube"></i></a>
+						<a href="https://github.com/DanielMCastillo" target="_blank" rel="noopener noreferrer"><i class="fa fa-github"></i></a>
+						<a href="https://www.instagram.com/dany4loop/" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram"></i></a>
+						<a href="https://www.linkedin.com/in/danielmcastillo/" target="_blank" rel="noopener noreferrer"><i class="fa fa-linkedin"></i></a>
+					</div>
+				</div>
+				<div class="col-sm-4 col-md-6 order-1  order-md-2 text-center">
+					<a href="./index.html" class="site-logo">
+						<img src="{% static 'nasa_app/img/logo.png' %}" alt="">
+					</a>
+				</div>
+				<div class="col-sm-4 col-md-3 order-3 order-sm-3">
+					<div class="header__switches">
+						<a href="#" class="nav-switch"><i class="fa fa-bars"></i></a>
+					</div>
+				</div>
+			</div>
+			<nav class="main__menu">
+				<ul class="nav__menu">
+					<li><a href="{% url 'mars_photos' %}">Home</a></li>
+					<li><a href="./about.html" class="menu--active">About</a></li>
+					<li><a href="mailto:danielmoralescast@hotmail.com">Contact</a><li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<!-- Header Section end -->
 
-    {% if photos %}
-        {% for photo in photos %}
-            <div style="margin: 20px 0;">
-                <p><strong>Rover:</strong> {{ photo.rover.name }}</p>
-                <p><strong>Cámara:</strong> {{ photo.camera.full_name }}</p>
-                <img src="{{ photo.img_src }}" alt="Foto de Marte" style="max-width: 100%; height: auto;">
+	<!-- About Page -->
+	<section class="about__page">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="about__text">
+						<h3 class="about__title">About Me</h3>
+						<div class="about__meta">
+							<img src="{% static 'nasa_app/img/profiledamc2.png' %}" class="img-thumbnail" alt="">
+							<div class="about__meta__info">
+								<h5>Daniel Castillo</h5>
+								<p>Software Engineer</p>
+							</div>
+						</div>
+						<p>I am a passionate software engineer with a great desire to explore and contribute to the world of technology. With a solid academic background in software engineering and practical experience in various projects, I am eager for immersing myself in new professional opportunities that challenge my skills and allow me to grow as a professional.</p>
+						<p>
+                            “Remember to look up at the stars and not down at your feet. Try to make sense of what you see and wonder about what makes the universe exist. Be curious. And however difficult life may seem, there is always something you can do and succeed at.” - Stephen Hawking</p>
+					</div>
+				</div>
+				<div class="col-lg-4">
+                <div class="experience__text">
+                    <h3 class="about__title">Project</h3>
+
+                    <div class="experience__item">
+                        <h4>NASA Mars Rover API</h4>
+                        <p>
+                            This project consumes NASA's public API to retrieve real photos taken by Mars rovers. Users can select a specific date to view images captured on that day, along with details about the rover and the camera used.
+                        </p>
+                    </div>
+
+                    <div class="experience__item">
+                        <h4>Technologies Used</h4>
+                        <p>
+                            Built using Django for the backend and Bootstrap for a responsive design. It also uses the Fresco library to display an interactive gallery of images. The project incorporates templates, forms, and clean view and route management.
+                        </p>
+                    </div>
+
+                    <div class="experience__item">
+                        <h4>Purpose</h4>
+                        <p>
+                            The main goal of this project is to practice integrating third-party REST APIs, improve handling of external data, and deliver an engaging user experience focused on space exploration.
+                        </p>
+                    </div>
+                </div>
             </div>
-        {% endfor %}
-    {% else %}
-        <p>No se encontraron fotos para la fecha seleccionada.</p>
-    {% endif %}
-</body>
-{% endblock %}
+			</div>
+		</div>
+	</section>
+	<!-- About Page end -->
+	<!-- Footer Section -->
+	<footer class="footer__section">
+		<div class="container">
+			<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+			<div class="footer__copyright__text">
+				<p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+			</div>
+			<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+		</div>
+	</footer>
+	<!-- Footer Section end -->
+	<!--====== Javascripts & Jquery ======-->
+	<script src="{% static 'nasa_app/js/vendor/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'nasa_app/js/jquery.slicknav.min.js' %}"></script>
+    <script src="{% static 'nasa_app/js/slick.min.js' %}"></script>
+    <script src="{% static 'nasa_app/js/fresco.min.js' %}"></script>
+    <script src="{% static 'nasa_app/js/main.js' %}"></script>
+
+	</body>
+    {% endblock content %}
 </html>
