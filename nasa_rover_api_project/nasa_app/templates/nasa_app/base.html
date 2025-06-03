@@ -1,0 +1,128 @@
+{% load static %}
+<html lang="zxx">
+<head>
+	<title>NASA APIS MARS ROVER</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Boto Photo Studio HTML Template">
+	<meta name="keywords" content="photo, html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Stylesheets -->
+    <link rel="stylesheet" href="{% static 'nasa_app/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'nasa_app/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'nasa_app/css/slicknav.min.css' %}">
+    <link rel="stylesheet" href="{% static 'nasa_app/css/fresco.css' %}">
+    <link rel="stylesheet" href="{% static 'nasa_app/css/slick.css' %}">
+
+	<!-- Main Stylesheets -->
+    <link rel="stylesheet" href="{% static 'nasa_app/css/style.css' %}">
+</head>
+{% block content %}
+<body>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+	<!-- Header Section -->
+	<header class="header">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-4 col-md-3 order-2 order-sm-1">
+					<div class="header__social">
+						<a href="#"><i class="fa fa-youtube"></i></a>
+						<a href="#"><i class="fa fa-github"></i></a>
+						<a href="#"><i class="fa fa-instagram"></i></a>
+						<a href="#"><i class="fa fa-linkedin"></i></a>
+					</div>
+				</div>
+				<div class="col-sm-4 col-md-6 order-1  order-md-2 text-center">
+					<a href="./index.html" class="site-logo">
+						<img src="{% static 'nasa_app/img/logo.png' %}" alt="">
+					</a>
+				</div>
+                <div class="col-sm-4 col-md-3 order-3 order-sm-3">
+					<div class="header__switches">
+						<a href="#" class="nav-switch"><i class="fa fa-bars"></i></a>
+					</div>
+				</div>
+			</div>
+			<nav class="main__menu">
+				<ul class="nav__menu">
+					<li><a href="./index.html" class="menu--active">Home</a></li>
+					<li><a href="./about.html">About</a></li>
+					<li><a href="./gallery.html">Gallery</a></li>
+					<li><a href="./blog.html">Blog</a>
+						<ul class="sub__menu">
+							<li><a href="./blog-single.html">Blog Single</a></li>
+						</ul>
+					</li>
+					<li><a href="./contact.html">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<!-- Header Section end -->
+    <hr>
+    <section class="search-section text-center py-4">
+    <h2>Fotos de Marte - {{ date }}</h2>
+    <form method="get" class="d-inline-flex align-items-center gap-2 mt-3 justify-content-center">
+        <h6 for="date" class="form-label mb-0 me-2">Selecciona una fecha:</h6>
+        <input type="date" id="date" name="date" value="{{ date }}" class="form-control form-control-sm" style="width: 150px;">
+        <button type="submit" class="btn btn-primary btn-sm">Buscar</button>
+    </form>
+</section>
+    </section>
+	<!-- Hero Section -->
+	<section class="hero__section container py-4">
+    {% if photos %}
+        <div class="row g-6">
+        {% for photo in photos %}
+            <div class="col-md-4 my-3">
+            <div class="card h-100">
+                <a class="fresco" href="{{ photo.img_src }}" data-fresco-group="mars-photos">
+                <img src="{{ photo.img_src }}" class="card-img-top mars-photo" alt="Foto de Marte">
+
+                </a>
+                <div class="card-body">
+                <h5 class="card-title">{{ photo.rover.name }}</h5>
+                <p class="card-text"><strong>Cámara:</strong> {{ photo.camera.full_name }} ({{ photo.camera.name }})</p>
+                <p class="card-text"><strong>Fecha (Tierra):</strong> {{ photo.earth_date }}</p>
+                <p class="card-text"><strong>Día Marciano (Sol):</strong> {{ photo.sol }}</p>
+                <p class="card-text"><strong>Lanzamiento:</strong> {{ photo.rover.launch_date }}</p>
+                <p class="card-text"><strong>Aterrizaje:</strong> {{ photo.rover.landing_date }}</p>
+                <p class="card-text"><strong>Estado:</strong> {{ photo.rover.status|capfirst }}</p>
+                </div>
+            </div>
+            </div>
+        {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-warning text-center" role="alert">
+        No se encontraron fotos para la fecha seleccionada.
+        </div>
+    {% endif %}
+    </section>
+	<!-- Hero Section end -->
+
+	<!-- Footer Section -->
+	<footer class="footer__section">
+		<div class="container">
+			<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+			<div class="footer__copyright__text">
+				<p>Daniel Alejandro Morales Castillo</p>
+			</div>
+			<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+		</div>
+	</footer>
+	<!-- Footer Section end -->
+
+	<!--====== Javascripts & Jquery ======-->
+    <script src="{% static 'nasa_app/js/vendor/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'nasa_app/js/jquery.slicknav.min.js' %}"></script>
+    <script src="{% static 'nasa_app/js/slick.min.js' %}"></script>
+    <script src="{% static 'nasa_app/js/fresco.min.js' %}"></script>
+    <script src="{% static 'nasa_app/js/main.js' %}"></script>
+	</body>
+
+{% endblock %}
+</html>

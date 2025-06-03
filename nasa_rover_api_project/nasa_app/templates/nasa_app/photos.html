@@ -1,0 +1,42 @@
+{% extends 'nasa_app/base.html' %}
+{% block content %}
+<body>
+    <section class="hero__section">
+        <div class="hero-slider">
+            {% if photos %}
+                {% for photo in photos %}
+                    <div class="slide-item">
+                        <a class="fresco" href="{{ photo.img_src }}" data-fresco-group="mars-photos">
+                            <img src="{{ photo.img_src }}" alt="Foto de Marte">
+                        </a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="slide-item">
+                    <p style="color: white; text-align: center;">No se encontraron fotos para la fecha seleccionada.</p>
+                </div>
+            {% endif %}
+        </div>
+        <div class="hero-text-slider">
+            {% if photos %}
+                {% for photo in photos %}
+                    <div class="text-item">
+                        <h2>{{ photo.rover.name }}</h2>
+                        <p>{{ photo.camera.full_name }}</p>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </section>
+
+    <div class="container mt-4">
+        <h2 style="text-align: center;">Fotos de Marte - {{ date }}</h2>
+        
+        <form method="get" style="margin: 20px 0; text-align: center;">
+            <label for="date">Selecciona una fecha (YYYY-MM-DD):</label>
+            <input type="date" id="date" name="date" value="{{ date }}">
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
+</body>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'nasa_app/base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>Fotos de Marte - Rover Curiosity</title>
+</head>
+{% block content %}
+<body>
+    <h1>Fotos de Marte - {{ date }}</h1>
+    
+    <form method="get">
+        <label for="date">Selecciona una fecha (YYYY-MM-DD):</label>
+        <input type="date" id="date" name="date" value="{{ date }}">
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if photos %}
+        {% for photo in photos %}
+            <div style="margin: 20px 0;">
+                <p><strong>Rover:</strong> {{ photo.rover.name }}</p>
+                <p><strong>Cámara:</strong> {{ photo.camera.full_name }}</p>
+                <img src="{{ photo.img_src }}" alt="Foto de Marte" style="max-width: 100%; height: auto;">
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No se encontraron fotos para la fecha seleccionada.</p>
+    {% endif %}
+</body>
+{% endblock %}
+</html>
