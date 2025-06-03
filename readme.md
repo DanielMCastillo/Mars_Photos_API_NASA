@@ -21,7 +21,7 @@ Este proyecto es una aplicación web desarrollada con **Django** y **Bootstrap**
 
 ## 📸 Ejemplo visual
 
-![Demo del proyecto]()
+![Demo del proyecto](nasa_rover_api_project/nasa_app/static/nasa_app/img/NASA_API.jpeg)
 
 ## 🚀 Instalación
 git clone https://github.com/tu-usuario/nasa-mars-viewer.git
